@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+
+\title{Cooperation in the Iterated Prisoner's Dilemma}
+\author{Lucas King, Miguel Feijoo}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+The iterated Prisoner's Dilemma provides a simple setting in which to study how cooperation evolves when individuals repeatedly interact. We investigate how an evolving population of strategies behaves under different levels of action noise, with particular attention to value obtained or \textbf{payoff}, cooperation and the prevalence of familiar strategies.
+
+\section{Methodology}
+Each strategy is represented by five binary decisions: an initial action and one action for each possible outcome of the preceding round. The experiment considers all 32 strategies, with cooperation encoded as 0 and defection as 1. Matches last 150 rounds. Action noise independently flips each player's intended action with probability 0, 0.01 or 0.05; the resulting actions determine both the payoff and the state used in the next round.
+
+For each noise level, we calculate three $32 \times 32$ matrices. Their entries describe the average payoff, intended cooperation and realised cooperation of the row strategy against the column strategy. At zero noise, each matchup follows a deterministic path. At nonzero noise, the entries are estimated from 20 independent matches per ordered strategy pair.
+
+The evolutionary experiment uses populations of 100 individuals over 500 generations, with 50 independent runs per noise level. Each individual's fitness is its mean payoff against the other members of its population, using the corresponding payoff matrix. Tournament selection, uniform crossover, bit-flip mutation and elitism produce each new generation. We record payoffs and strategy frequencies at every generation, and use the frequencies and cooperation matrices to calculate population-wide cooperation rates over ordered pairs of distinct individuals.
+
+We examine trajectories averaged across runs alongside individual runs, including the frequencies of tit-for-tat, Pavlov, always defect and grim strategies. The statistical analysis will be specified in a later version.
+
+\section{Results and interpretation}
+% TODO
+
+\end{document}
