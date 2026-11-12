@@ -1,0 +1,8 @@
+jupyterlab
+ipykernel
+numpy
+matplotlib
+deap
+scipy
+statsmodels
+pandas
